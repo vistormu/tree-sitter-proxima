@@ -22,9 +22,7 @@
       ],
       "injection-regex": "proxima",
       "highlights": [
-        "queries/highlights.scm",
-        "queries/proxima/highlights.scm",
-        "queries/prox/highlights.scm"
+        "queries/highlights.scm"
       ]
     }
   ]

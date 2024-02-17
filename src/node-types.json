@@ -23,6 +23,14 @@
       "required": false,
       "types": [
         {
+          "type": "escaped_char",
+          "named": true
+        },
+        {
+          "type": "html",
+          "named": true
+        },
+        {
           "type": "tag",
           "named": true
         },
@@ -55,6 +63,18 @@
   {
     "type": "@",
     "named": false
+  },
+  {
+    "type": "comment",
+    "named": true
+  },
+  {
+    "type": "escaped_char",
+    "named": true
+  },
+  {
+    "type": "html",
+    "named": true
   },
   {
     "type": "identifier",

@@ -1,20 +1,21 @@
 module.exports = grammar({
   name: 'proxima',
 
-  // Define the tokens used in your language
   extras: $ => [
-    /\s/, // Whitespace is not significant
+    /\s/,
+    $.comment,
   ],
 
-  // The entry point rule
   rules: {
-    // The document consists of multiple tags or text elements
     document: $ => repeat($._element),
 
-    // An element can be a tag or a text node
-    _element: $ => choice($.tag, $.text),
+    _element: $ => choice(
+      $.tag,
+      $.escaped_char,
+      $.text,
+      $.html,
+    ),
 
-    // Define how a tag looks
     tag: $ => seq(
       '@', $.identifier, repeat($.argument)
     ),
@@ -24,11 +25,15 @@ module.exports = grammar({
       '{', optional($.text), '}'
     ),
 
-    // Identifiers for tags
+    html: $ => /<[^>]+>/,
+
     identifier: $ => /[a-zA-Z_][a-zA-Z0-9_-]*/,
 
-    // Define text nodes (simplistic)
-    text: $ => /[^@{}]+/,
-  }
+    escaped_char: $ => /\\./,
+
+    comment: $ => /#[^\n]*/,
+
+    text: $ => /[^#\\@{}<>]+/,
+  },
 });
 
