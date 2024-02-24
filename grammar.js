@@ -13,7 +13,7 @@ module.exports = grammar({
       $.tag,
       $.escaped_char,
       $.text,
-      $.html,
+      $.html
     ),
 
     tag: $ => seq(
