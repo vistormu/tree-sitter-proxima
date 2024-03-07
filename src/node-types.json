@@ -4,9 +4,21 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": false,
       "types": [
+        {
+          "type": "escaped_char",
+          "named": true
+        },
+        {
+          "type": "html",
+          "named": true
+        },
+        {
+          "type": "tag",
+          "named": true
+        },
         {
           "type": "text",
           "named": true

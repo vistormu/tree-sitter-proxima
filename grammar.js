@@ -22,7 +22,7 @@ module.exports = grammar({
 
     // Arguments are enclosed in curly braces
     argument: $ => seq(
-      '{', optional($.text), '}'
+      '{', repeat($._element), '}'
     ),
 
     html: $ => /<[^>]+>/,
