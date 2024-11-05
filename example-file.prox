@@ -1,5 +1,5 @@
 this is a @tag with no arguments
 
-this is a @tag{with}{arguments}
+this is a @mod.tag{with}{arguments}
 
 # This is a comment

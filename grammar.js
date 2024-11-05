@@ -27,7 +27,7 @@ module.exports = grammar({
 
     html: $ => /<[^>]+>/,
 
-    identifier: $ => /[a-zA-Z_][a-zA-Z0-9_-]*/,
+    identifier: $ => /[a-zA-Z_][a-zA-Z0-9_.-]*/,
 
     escaped_char: $ => /\\./,
 
