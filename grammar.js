@@ -13,19 +13,29 @@ module.exports = grammar({
       $.tag,
       $.escaped_char,
       $.text,
-      $.html
     ),
 
     tag: $ => seq(
-      '@', $.identifier, repeat($.argument)
+      $.tag_at,
+      $.identifier,
+      repeat($.argument)
     ),
 
     // Arguments are enclosed in curly braces
     argument: $ => seq(
-      '{', repeat($._element), '}'
+      '{',
+      optional($.arg_name),
+      repeat($._element),
+      '}'
     ),
 
-    html: $ => /<[^>]+>/,
+    arg_name: $ => seq(
+      '<',
+      /[a-zA-Z_][a-zA-Z0-9_.-]*/,
+      '>'
+    ),
+
+    tag_at : $ => '@',
 
     identifier: $ => /[a-zA-Z_][a-zA-Z0-9_.-]*/,
 

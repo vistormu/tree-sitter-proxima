@@ -1,5 +1,10 @@
 [
   {
+    "type": "arg_name",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "argument",
     "named": true,
     "fields": {},
@@ -8,11 +13,11 @@
       "required": false,
       "types": [
         {
-          "type": "escaped_char",
+          "type": "arg_name",
           "named": true
         },
         {
-          "type": "html",
+          "type": "escaped_char",
           "named": true
         },
         {
@@ -40,10 +45,6 @@
           "named": true
         },
         {
-          "type": "html",
-          "named": true
-        },
-        {
           "type": "tag",
           "named": true
         },
@@ -53,6 +54,11 @@
         }
       ]
     }
+  },
+  {
+    "type": "identifier",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "tag",
@@ -69,12 +75,20 @@
         {
           "type": "identifier",
           "named": true
+        },
+        {
+          "type": "tag_at",
+          "named": true
         }
       ]
     }
   },
   {
-    "type": "@",
+    "type": "<",
+    "named": false
+  },
+  {
+    "type": ">",
     "named": false
   },
   {
@@ -86,11 +100,7 @@
     "named": true
   },
   {
-    "type": "html",
-    "named": true
-  },
-  {
-    "type": "identifier",
+    "type": "tag_at",
     "named": true
   },
   {

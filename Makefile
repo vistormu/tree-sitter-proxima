@@ -107,4 +107,8 @@ clean:
 test:
 	$(TS) test
 
-.PHONY: all install uninstall clean test
+move:
+	tree-sitter generate
+	cp queries/highlights.scm ~/.local/share/nvim/lazy/nvim-treesitter/queries/proxima/highlights.scm
+
+.PHONY: all install uninstall clean test move
